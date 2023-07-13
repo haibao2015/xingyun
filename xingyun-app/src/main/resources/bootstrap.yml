@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: xingyun
+  cloud:
+    discovery:
+      enabled: true
+
+# mybatis-plus 配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    use-generated-keys: true
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+
+# PageHelper插件的配置
+pagehelper:
+  #  helper-dialect: mysql  #指定数据库类型。不配置的话pageHelper也会自动检测
+  # 分页合理化参数配置
+  reasonable: true
+  # 支持通过 Mapper 接口参数来传递分页参数
+  support-methods-arguments: true
+  # 默认每页条数
+  default-page-size: 10
+  # 默认第一页
+  default-page-num: 1
+  params: #默认值为pageNum=pageNum;pageSize=pageSize;count=countSql;reasonable=reasonable;pageSizeZero=pageSizeZero。
+

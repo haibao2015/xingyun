@@ -17,8 +17,8 @@ server:
 #    max-http-post-size: 4MB
 
 spring:
-  application:
-    name: xingyun
+  profiles:
+    active: test
   datasource:
       type: com.zaxxer.hikari.HikariDataSource
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -52,29 +52,6 @@ spring:
 #            enable: true
 #            required: true
 
-# mybatis-plus 配置
-mybatis-plus:
-  configuration:
-    map-underscore-to-camel-case: true
-    auto-mapping-behavior: full
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    use-generated-keys: true
-  mapper-locations: classpath*:mapper/**/*Mapper.xml
-
-# PageHelper插件的配置
-pagehelper:
-#  helper-dialect: mysql  #指定数据库类型。不配置的话pageHelper也会自动检测
-  # 分页合理化参数配置
-  reasonable: true
-  # 支持通过 Mapper 接口参数来传递分页参数
-  support-methods-arguments: true
-  # 默认每页条数
-  default-page-size: 10
-  # 默认第一页
-  default-page-num: 1
-  params: #默认值为pageNum=pageNum;pageSize=pageSize;count=countSql;reasonable=reasonable;pageSizeZero=pageSizeZero。
-
-
 
 # DFS config  type: hdfs、s3、local
 dfs:
@@ -82,7 +59,6 @@ dfs:
   namenode.url: hdfs://lake-node3:8020
   namespace: /xingyun
   path.separator: /
-
 
 # springdoc-openapi项目配置
 springdoc:
@@ -104,7 +80,6 @@ knife4j:
     swagger-model-name: 实体类列表
     enable-footer-custom: true
     footer-custom-content: Apache License 2.0 | Copyright  2023-[星云](https://github.com/haibao2015/xingyun)
-
 
 management:
   endpoints:

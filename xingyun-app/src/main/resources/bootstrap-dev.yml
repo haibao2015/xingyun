@@ -1,0 +1,19 @@
+spring:
+  profiles: dev
+  cloud:
+    nacos:
+      config:
+        enabled: false
+        server-addr: 192.168.201.54:8848
+        username: nacos
+        password: nacos
+        namespace: 256cb68f-b3db-4346-a149-af0a9b749222
+        refresh-enabled: true
+        fileExtension: yaml
+      #        extension-configs[0]:
+      #          dataId: xx-xx.yaml
+      discovery:
+        server-addr: 192.168.201.54:8848
+        namespace: 256cb68f-b3db-4346-a149-af0a9b749222
+        username: nacos
+        password: nacos
